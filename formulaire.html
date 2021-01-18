@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="div_header">
-        <a href="index.html"><img class="img_header1" src="fonts/left_arrow.png" alt=""></a>
+        <a href="index.php"><img class="img_header1" src="fonts/left_arrow.png" alt=""></a>
         <img class="img_header2" src="fonts/logo.png" alt="">
     </div>
     <h2 class="centre">AJOUT D'APPRENANT(S)</h2>
@@ -16,31 +16,31 @@
         <form action="traitement.php" method="POST">
             <div class="alignement">
                 <label class="label" for="nom">Entrez le Nom:</label>
-                <input class="input" type="text" name="nom" placeholder="Veuillez entrer le nom">
+                <input class="input" type="text" name="nom" placeholder="Veuillez entrer le nom" required>
             </div>
             <div class="alignement">
                 <label class="label" for="prenom">Entrez le Prénom:</label>
-                <input class="input" type="text" name="prenom" placeholder="Veuillez entrer le prénom">
+                <input class="input" type="text" name="prenom" placeholder="Veuillez entrer le prénom" required>
             </div>
             <div class="alignement"> 
                 <label class="label" for="naissance">Entrez la date de naissance:</label>
-                <input class="input" type="text" name="naissance" placeholder="Date de naissance">
+                <input class="input" type="date" name="naissance" placeholder="Date de naissance" required>
             </div>
             <div class="alignement"> 
                 <label class="label" for="sexe">Veuillez entrez le Sexe:</label>
-                <input class="input" type="text" name="sexe" placeholder="Sexe">
+                <input class="input" type="text" name="sexe" placeholder="Sexe" required>
             </div>
             <div class="alignement">
                 <label class="label" for="ville">Entrez la ville d'origine:</label>
-                <input class="input" type="text" name="ville" placeholder="Ville d'origine">
+                <input class="input" type="text" name="ville" placeholder="Ville d'origine" required>
             </div>
             <div class="alignement">
                 <label class="label" for="formation">Entrez la formation de base:</label>
-                <input class="input" type="text" name="formation" placeholder="Formation de base">
+                <input class="input" type="text" name="formation" placeholder="Formation de base" required>
             </div>
             <div class="alignement">
                 <label class="label" for="email">Entrez l'email:</label>
-                <input class="input" type="email" name="email" placeholder="Veuillez entrer l'email">
+                <input class="input" type="email" name="email" placeholder="Veuillez entrer l'email" required>
             </div>   
             <button type="submit" class="bouton"><span>Ajouter l'apprenant</span></button>
         </form>

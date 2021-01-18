@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    require_once "affichage.php"
+    require_once "affichage.php";
     ?>
     <header>
         <div id="logo">
@@ -17,7 +17,7 @@
             </a>
         </div>
         <div id="searchbar">
-            <form action="#" method="POST">
+            <form action="#" method="GET" id="form">
                 <input type="text" name="input" id="input" placeholder="Rechercher...">
                 <button type="submit">
                     <img src="fonts/search_Icon.png" alt="Rechercher">
@@ -61,23 +61,30 @@
                     <tbody>
 
                         
-                        <?php
-                        while($data = $recuperation -> fetch()) {
-                            echo "<tr>";
-                            echo "<td>".$data["Nom"]."</td>";
-                            echo "<td>".$data["Prenom"]."</td>";
-                            echo "<td>".$data["Email"]."</td>";
-                            echo "<td>".$data["Dates_de_naissance"]."</td>";
-                            echo "<td>Ouaga</td>";
-                            echo "<td>".$data["Sexe"]."</td>";
-                            echo "<td>Dev_web</td>";
-                            echo "</tr>";
-                        }
-                        ?>
                     </tbody>
                   </table>
             </div>
         </div>
     </main>
+    <script>let data = [];</script>
+    <?php
+    while($data = $recuperation -> fetch()) {
+        ?>
+        <script>
+            data.push({
+                nom: '<?= $data['Nom']; ?>',
+                prenom: '<?= $data['Prenom']; ?>',
+                email: '<?= $data['Email']; ?>',
+                naissance: '<?= $data['Dates_de_naissance']; ?>',
+                sexe: '<?= $data['Sexe']; ?>',
+                ville: '<?= $data['ville']; ?>',
+                formation: '<?= $data['formation']; ?>'
+            });
+        </script>
+    <?php
+    }
+                           
+        ?>
+    <script src="app.js"></script>
 </body>
 </html>
