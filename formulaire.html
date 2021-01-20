@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="div_header">
-        <a href="index.php"><img class="img_header1" src="fonts/left_arrow.png" alt=""></a>
+        <a href="index.php"><img class="img_header1" src="fonts/left_arrow.png"></a>
         <img class="img_header2" src="fonts/logo.png" alt="">
     </div>
     <h2 class="centre">AJOUT D'APPRENANT(S)</h2>
@@ -28,7 +28,10 @@
             </div>
             <div class="alignement"> 
                 <label class="label" for="sexe">Veuillez entrez le Sexe:</label>
-                <input class="input" type="text" name="sexe" placeholder="Sexe" required>
+                <input class="input" type="text" list="genders" name="sexe" placeholder="Sexe" required>
+                <datalist id="genders">
+                    <option value="Masculin"></option>
+                </datalist>
             </div>
             <div class="alignement">
                 <label class="label" for="ville">Entrez la ville d'origine:</label>

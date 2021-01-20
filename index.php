@@ -12,13 +12,13 @@
     ?>
     <header>
         <div id="logo">
-            <a href="#">
+            <a href="index.php">
                 <img src="fonts/logo.png" alt="LogoSimplon">
             </a>
         </div>
         <div id="searchbar">
-            <form action="#" method="GET" id="form">
-                <input type="text" name="input" id="input" placeholder="Rechercher...">
+            <form action="traitement.php" method="GET" id="form">
+                <input type="text" name="input" id="input" placeholder="Filtrer...">
                 <button type="submit">
                     <img src="fonts/search_Icon.png" alt="Rechercher">
                 </button>
@@ -67,10 +67,10 @@
         </div>
     </main>
     <script>let data = [];</script>
-    <?php
+    <script>
+        <?php
     while($data = $recuperation -> fetch()) {
         ?>
-        <script>
             data.push({
                 nom: '<?= $data['Nom']; ?>',
                 prenom: '<?= $data['Prenom']; ?>',
@@ -80,11 +80,12 @@
                 ville: '<?= $data['ville']; ?>',
                 formation: '<?= $data['formation']; ?>'
             });
-        </script>
-    <?php
+        
+        <?php
     }
                            
         ?>
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
