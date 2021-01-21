@@ -1,7 +1,7 @@
 const searchBar = document.querySelector('#form');
 const searchInput = document.querySelector('#input');
 const tablebody = document.querySelector('tbody');
-let results = data;
+let results = donnees;
 let occurrences;
 
 //Prevent Default behavior of the searchbar form
@@ -38,8 +38,8 @@ function returnTd (arr) {
       <td>${obj.prenom}</td>
       <td>${obj.email}</td>
       <td>${obj.naissance}</td>
-      <td>${obj.sexe}</td>
       <td>${obj.ville}</td>
+      <td>${obj.sexe}</td>
       <td>${obj.formation}</td>
     </tr>
     `;

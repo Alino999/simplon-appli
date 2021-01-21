@@ -66,12 +66,12 @@
             </div>
         </div>
     </main>
-    <script>let data = [];</script>
+    <script>let donnees = [];</script>
     <script>
         <?php
     while($data = $recuperation -> fetch()) {
         ?>
-            data.push({
+            donnees.push({
                 nom: '<?= $data['Nom']; ?>',
                 prenom: '<?= $data['Prenom']; ?>',
                 email: '<?= $data['Email']; ?>',
