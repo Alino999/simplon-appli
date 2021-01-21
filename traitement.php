@@ -1,7 +1,7 @@
 <?php
 require_once 'connexion.php';
 function inputIsSet($input) {
-    return isset($input) ? $input : null;
+    return isset($input) ? $input : '';
 }
 $nom = inputIsSet($_POST['nom']);
 echo $nom;
@@ -17,7 +17,7 @@ $Villes = array('Ouaga' => 'Ouagadougou', 'Bobo' => 'Bobo Dioulasso');
 $Formations = array('Dev_web' => 'Developpement web et web mobile', 'Ref_dig' => 'Référent digital');
 $Sexe = array('homme' => 'Masculin', 'femme' => 'Feminin');
 function filterRelatedEl($el, $arr) {
-    if($el != null) {
+    if($el != '') {
         foreach($arr as $key => $value) {
             if($el == $key) {
                 $el = $arr[$key];
