@@ -6,7 +6,7 @@ let occurrences;
 
 //Prevent Default behavior of the searchbar form
 
-searchBar.addEventListener('submit', (e) => {e.preventDefault()});
+searchBar.addEventListener('submit', (e) => e.preventDefault());
 
 //Function to filter Data when typing in searchbar input
 
