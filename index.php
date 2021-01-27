@@ -1,91 +1,32 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" href="styles/accueil.css">
-    <title>Listes des apprenant Simplon</title>
+    <link rel="stylesheet" href="styles/authentification.css">
+    <title>Connexion</title>
 </head>
 <body>
-    <?php
-    require_once "affichage.php";
-    ?>
-    <header>
-        <div id="logo">
-            <a href="index.php">
-                <img src="fonts/logo.png" alt="LogoSimplon">
-            </a>
-        </div>
-        <div id="searchbar">
-            <form action="traitement.php" method="GET" id="form">
-                <input type="text" name="input" id="input" placeholder="Filtrer...">
-                <button type="submit">
-                    <img src="fonts/search_Icon.png" alt="Rechercher">
-                </button>
-            </form>
-        </div>
-    </header>
-    <main>
-        <div id="addBtn">
-            <a href="formulaire.html">Ajouter l'apprenant</a>
-        </div>
-        <div id="list">
-            <h1>Listes des apprenants</h1>
-            <div id="table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                <h3>Nom</h3>
-                            </th>
-                            <th>
-                                <h3>Prénom</h3>
-                            </th>
-                            <th>
-                                <h3>Email</h3>
-                            </th>
-                            <th>
-                                <h3>Date de naissance</h3>
-                            </th>
-                            <th>
-                                <h3>Ville d'origine</h3>
-                            </th>
-                            <th>
-                                <h3>Sexe</h3>
-                            </th>
-                            <th>
-                                <h3>Formation</h3>
-                            </th>
-                        </tr>
-                    </thead>  
-                    <tbody>
-
-                        
-                    </tbody>
-                  </table>
+    <div class="div_header">
+        <a href="connexion.php"><img class="img_header2" src="fonts/logo.png" alt="Simplon"></a>
+    </div>
+    <h1>Connexion</h1>
+    <form method="post">
+        <div class="alignement">
+                <label class="label" for="nom"> Nom d'utilisateur:</label>
+                <input class="input" type="text" name="nom" placeholder="Veuillez entrer le nom d'ulisateur" required>
             </div>
-        </div>
-    </main>
-    <script>let donnees = [];</script>
-    <script>
-        <?php
-    while($data = $recuperation -> fetch()) {
-        ?>
-            donnees.push({
-                nom: '<?= $data['Nom']; ?>',
-                prenom: '<?= $data['Prenom']; ?>',
-                email: '<?= $data['Email']; ?>',
-                naissance: '<?= $data['Dates_de_naissance']; ?>',
-                sexe: '<?= $data['Sexe']; ?>',
-                ville: '<?= $data['ville']; ?>',
-                formation: '<?= $data['formation']; ?>'
-            });
-        
-        <?php
-    }
-                           
-        ?>
-    </script>
-    <script src="app.js"></script>
+            <div class="alignement">
+                <label class="label" for="prenom"> Mot de passe:</label>
+                <input class="input" type="password" name="password" placeholder="Veuillez entrer le mot de passe" required>
+            </div>
+        <button type="submit">Se connecter</button>
+    </form>
+    <p><span>ou</span></p>
+    <div class="crateAccount">
+        <a href="signIn.php"> créer le compte admin</a>
+    </div>
+
+    <script src="authentification.js"></script>
 </body>
 </html>

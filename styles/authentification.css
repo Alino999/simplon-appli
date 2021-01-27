@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-align: center;
+}
+.div_header {
+    width: 100%;
+    height: 100px;
+    background-color: #ce0033;
+    margin-bottom: 50px;
+}
+.img_header2 {
+    max-width: 75px ;
+    margin: 15px auto;
+}
+.alignement {
+    max-width:500px;
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+}
+
+.box label {
+    font-weight: bolder;
+}  
+.input {
+    width: 70%;
+    min-height: 30px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgba(223, 218, 218, 0.61);
+    text-indent: 10px;
+    outline: none;
+}
+.label {
+    width: 30%;
+    min-height: 30px;
+    font-weight: bold;
+    margin-top: 6px;
+    margin-right: 5px;
+    text-align: right;
+}
+form {
+    max-width:500px;
+    margin: 15px auto;
+}
+.box {
+    text-align: center;
+}
+button {
+    width:200px;
+    height: 35px;
+    background-color: rgb(223, 17, 79);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 1em;
+    color: white;
+    font-weight: bolder;
+}
+.crateAccount > a {
+    margin-top: 15px;
+    margin-left: 30px;
+    padding: 8px 20px;
+    text-decoration: none;
+    border: 2px solid rgb(223, 17, 79);
+    outline: none;
+    font-weight: bolder;
+    color: #ce0033;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: color 1s, background-color 1s;
+}
+.crateAccount > a:hover {
+    background-color: rgb(223, 17, 79);
+    color: #fff;
+}
+.error {
+    display: none;
+    width: fit-content;
+    margin: auto;
+    padding: 12px 75px;
+    color: #ce0033;
+    font-weight: bolder;
+    background: #f3a7ba;
+    border: 2px solid #e96787;
+    border-radius: 7px;
+}
+.error button {
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 45%;
+    transform: rotate(135deg);
+    float: right;
+    background: transparent;
+    border: none;
+    outline: none;
+}
