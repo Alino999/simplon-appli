@@ -8,5 +8,5 @@ try {
     //afficher les erreures cache le mot de passe
     die("ERREUR: ".$th -> getMessage());
 }
-function ajaxRequest() {return !empty($_SERVER('HTTP_X_REQUESTED_WITH')) && strtolower($_SERVER('HTTP_X_REQUESTED_WITH')) == 'xmlhttprequest'; }
+function ajaxRequest() {return !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'; }
 ?>

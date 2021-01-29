@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="styles/authentification.css">
     <title>Connexion</title>
+    <?php 
+    require_once 'connexion.php';
+    $access = $db -> query('SELECT directaccess FROM admin');
+    $key = $access -> fetch();
+    if($key) header('Location: liste.php');
+    ?>
 </head>
 <body>
     <div class="div_header">
         <a href="connexion.php"><img class="img_header2" src="fonts/logo.png" alt="Simplon"></a>
     </div>
     <h1>Connexion</h1>
+    <div class="error"><span>Il y'a une erreur!</span><button>+</button></div>
     <form method="post">
         <div class="alignement">
                 <label class="label" for="nom"> Nom d'utilisateur:</label>
-                <input class="input" type="text" name="nom" placeholder="Veuillez entrer le nom d'ulisateur" required>
+                <input class="input" type="text" id="nom" name="username" placeholder="Veuillez entrer le nom d'ulisateur" required>
             </div>
             <div class="alignement">
                 <label class="label" for="prenom"> Mot de passe:</label>

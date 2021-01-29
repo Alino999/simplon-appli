@@ -18,7 +18,10 @@ count($data) > 2 ? signIn($data) : logIn($data);
             http_response_code(400);
         }
         die();
-     } else {array_pop($formData);}
+     } else {
+         $formData['password1'] = sha1($formData['password1']);
+         array_pop($formData);
+        }
     foreach ($formData as $key => $value) {
         array_push($toAdd, $value);
     }
@@ -33,18 +36,18 @@ count($data) > 2 ? signIn($data) : logIn($data);
  function logIn($formData) {
     require_once 'connexion.php';
     $toCheck = array();
-    $err = array('nom' => "L'un des champ renseigné est incorrect!");
+    $err = array('nom' => "L'un des champs est incorrect!");
     foreach ($formData as $key => $value) {
         array_push($toCheck, $value);
     }
-    $rq = $db -> query('SELECT username, adminpassword FROM admin WHERE username = ? AND passwordadmin = ?');
-    $rq -> execute($toCheck);
-    if (!$req) {
-       if(ajaxRequest()) {
-           echo json_encode($err);
-           http_response_code(400);
-       }
-       die();
+    $rq = $db -> query('SELECT * FROM admin');
+    $res = $rq -> fetch();
+    if ($res['username'] != $toCheck[0] ) {
+        if(ajaxRequest()) {
+            echo json_encode($err);
+            http_response_code(400);
+        }
+        die();
     }
  }
 ?>
